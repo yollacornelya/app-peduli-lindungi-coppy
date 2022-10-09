@@ -6,8 +6,8 @@ import {
   SignupScreen,
   CovidScreen,
   PersonalInfoScreen,
-  RegisterDoneScreen,
-  SecurityScreen,
+  ImunizationScreen,
+  EhacScreen,
 } from "./Pages";
 
 const Stack = createStackNavigator();
@@ -34,6 +34,16 @@ export default Router = () => {
         name="CovidScreen"
         component={CovidScreen}
         options={{ headerShown: true, title: "COVID - 19 Test Results" }}
+      />
+      <Stack.Screen
+        name="ImunizationScreen"
+        component={ImunizationScreen}
+        options={{ headerShown: true, title: "Vaccine and Immunization" }}
+      />
+      <Stack.Screen
+        name="EhacScreen"
+        component={EhacScreen}
+        options={{ headerShown: true, title: "Ehac" }}
       />
     </Stack.Navigator>
   );
