@@ -7,7 +7,7 @@ import {
   Dimensions,
   StatusBar,
 } from "react-native";
-import { dokter, myehac, createehc,myehc } from "../../assets";
+import { bgehac, createehc, myehc } from "../../assets";
 
 const windowHeight = Dimensions.get("window").height;
 
@@ -20,7 +20,7 @@ export default EhacScreen = ({ navigation }) => {
           translucent
           backgroundColor="(rgba(0,0,0,0)"
         />
-        <Image source={dokter} style={styles.gambartop} />
+        <Image source={bgehac} style={styles.gambartop} />
       </View>
 
       <View style={styles.item}>
