@@ -1,5 +1,5 @@
 import HomeScreen from "./HomeScreen";
-import SplashScreen from "./SplashScreen";
+import SplashScreen from "./SplashScreen/";
 import SignupScreen from "./RegistrationScreen/SignupScreen";
 import CovidScreen from "./RegistrationScreen/CovidScreen";
 import EhacScreen from "./RegistrationScreen/EhacScreen";
