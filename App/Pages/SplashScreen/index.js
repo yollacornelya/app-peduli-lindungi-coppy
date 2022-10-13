@@ -10,10 +10,14 @@ import {
 const windowHeight = Dimensions.get("window").height;
 
 export default SplashScreen = ({ navigation }) => {
+  React.useEffect(() => {
+    setTimeout(() => {
+      navigation.replace("SignupScreen");
+    }, 3000);
+  }, [navigation]);
   return (
     <View style={styles.bgMainApp}>
-      <View
-        style={styles.imgContainer}>
+      <View style={styles.imgContainer}>
         <Image source={LogoSplash} style={styles.imgStyle} />
       </View>
       <View style={styles.container}>
