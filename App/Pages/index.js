@@ -5,7 +5,8 @@ import CovidScreen from "./RegistrationScreen/CovidScreen";
 import EhacScreen from "./RegistrationScreen/EhacScreen";
 import ImunizationScreen from "./RegistrationScreen/ImunizationScreen";
 export {
-  ImunizationScreen,HomeScreen,
+  ImunizationScreen,
+  HomeScreen,
   SplashScreen,
   SignupScreen,
   CovidScreen,
