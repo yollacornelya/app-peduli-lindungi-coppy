@@ -5,7 +5,6 @@ import {
   SplashScreen,
   SignupScreen,
   CovidScreen,
-  PersonalInfoScreen,
   ImunizationScreen,
   EhacScreen,
 } from "./Pages";
@@ -14,7 +13,7 @@ const Stack = createStackNavigator();
 
 export default Router = () => {
   return (
-    <Stack.Navigator initialRouteName="SignupScreen">
+    <Stack.Navigator initialRouteName="SplashScreen">
       <Stack.Screen
         name="SignupScreen"
         component={SignupScreen}
@@ -43,7 +42,7 @@ export default Router = () => {
       <Stack.Screen
         name="EhacScreen"
         component={EhacScreen}
-        options={{ headerShown: true, title: "Ehac" }}
+        options={{ headerShown: true, title: "Ehac", headerTransparent: true }}
       />
     </Stack.Navigator>
   );
