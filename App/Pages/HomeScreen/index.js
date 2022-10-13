@@ -1,17 +1,26 @@
 import * as React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  Dimensions,
-} from "react-native";
+import { View, Text, StyleSheet, Image, Dimensions, Alert } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-import { LogoLonceng, LogoUser, LogoHand, Panah, vaccine,testresult,ic_ehac,telemedicine,travel,health,statistik,Hospital } from "../../assets";
+import {
+  LogoLonceng,
+  LogoUser,
+  LogoHand,
+  Panah,
+  vaccine,
+  testresult,
+  ic_ehac,
+  telemedicine,
+  travel,
+  scan,
+  health,
+  statistik,
+  Hospital,
+} from "../../assets";
 
 const windowHeight = Dimensions.get("window").height;
 
-export default HomeScreen = () => {
+export default HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.bgMainApp}>
       <View style={styles.container}>
@@ -37,43 +46,111 @@ export default HomeScreen = () => {
           <Image source={Panah} style={styles.panah} />
           <Text style={styles.fonthitam}>Check-In Prefence</Text>
         </View>
-        <View></View>
+        <View style={styles.kotakcheck}>
+          <View style={styles.row}>
+            <Image source={scan} style={styles.scaner} />
+            <Text style={styles.fontbiru}>Check-In </Text>
+          </View>
+        </View>
       </View>
       <View style={styles.row}>
         <View style={styles.column}>
-          <Image source={vaccine} style={styles.gambar2} />
+          <TouchableOpacity
+            onPress={() => navigation.navigate("ImunizationScreen")}
+          >
+            <Image source={vaccine} style={styles.gambar2} />
+          </TouchableOpacity>
           <Text style={styles.tulisan}>Vaccine And Immunization</Text>
         </View>
         <View style={styles.column}>
-          <Image source={testresult} style={styles.gambar2} />
+          <TouchableOpacity onPress={() => navigation.navigate("CovidScreen")}>
+            <Image source={testresult} style={styles.gambar2} />
+          </TouchableOpacity>
           <Text style={styles.tulisan}>Covid-19 Test Results</Text>
         </View>
         <View style={styles.column}>
-          <Image source={ic_ehac} style={styles.gambar2} />
+          <TouchableOpacity onPress={() => navigation.navigate("EhacScreen")}>
+            <Image source={ic_ehac} style={styles.gambar2} />
+          </TouchableOpacity>
           <Text style={styles.tulisan}>Ehac</Text>
         </View>
       </View>
       <View style={styles.row1}>
         <View style={styles.column}>
-          <Image source={travel} style={styles.gambar2} />
+          <TouchableOpacity
+            onPress={() =>
+              Alert.alert("Info", " Module Dalam Pengembangan", [
+                {
+                  text: "ok",
+                  onPress: () => console.log("ok ditekan"),
+                },
+              ])
+            }
+          >
+            <Image source={travel} style={styles.gambar2} />
+          </TouchableOpacity>
           <Text style={styles.tulisan}>Travel Regulations</Text>
         </View>
         <View style={styles.column}>
-          <Image source={telemedicine} style={styles.gambar2} />
+          <TouchableOpacity
+            onPress={() =>
+              Alert.alert("Info", " Module Dalam Pengembangan", [
+                {
+                  text: "ok",
+                  onPress: () => console.log("ok ditekan"),
+                },
+              ])
+            }
+          >
+            <Image source={telemedicine} style={styles.gambar2} />
+          </TouchableOpacity>
           <Text style={styles.tulisan}>Telemedicine</Text>
         </View>
         <View style={styles.column}>
-          <Image source={health} style={styles.gambar2} />
+          <TouchableOpacity
+            onPress={() =>
+              Alert.alert("Info", " Module Dalam Pengembangan", [
+                {
+                  text: "ok",
+                  onPress: () => console.log("ok ditekan"),
+                },
+              ])
+            }
+          >
+            <Image source={health} style={styles.gambar2} />
+          </TouchableOpacity>
           <Text style={styles.tulisan}>Healthcare Facility</Text>
         </View>
       </View>
       <View style={styles.row1}>
         <View style={styles.column}>
-          <Image source={statistik} style={styles.gambar2} />
+          <TouchableOpacity
+            onPress={() =>
+              Alert.alert("Info", " Module Dalam Pengembangan", [
+                {
+                  text: "ok",
+                  onPress: () => console.log("ok ditekan"),
+                },
+              ])
+            }
+          >
+            <Image source={statistik} style={styles.gambar2} />
+          </TouchableOpacity>
           <Text style={styles.tulisan}>Covid-19 Statistic</Text>
         </View>
         <View style={styles.column}>
-          <Image source={Hospital} style={styles.gambar2} />
+          <TouchableOpacity
+            onPress={() =>
+              Alert.alert("Info", " Module Dalam Pengembangan", [
+                {
+                  text: "ok",
+                  onPress: () => console.log("ok ditekan"),
+                },
+              ])
+            }
+          >
+            <Image source={Hospital} style={styles.gambar2} />
+          </TouchableOpacity>
           <Text style={styles.tulisan}>Find Hospital Bed</Text>
         </View>
         <View style={styles.column}></View>
@@ -101,7 +178,7 @@ const styles = StyleSheet.create({
   row1: {
     flexDirection: "row",
     flex: 1,
-    marginTop:-70,
+    marginTop: -70,
     marginRight: 15,
   },
   column: {
@@ -134,7 +211,17 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
     flexDirection: "row",
-    paddingBottom: 0,
+    paddingBottom: 15,
+  },
+  kotakcheck: {
+    backgroundColor: "#EAF5F9",
+    borderRadius: 20,
+    flexDirection: "row",
+    height: 40,
+    width: 120,
+    marginLeft: 60,
+    marginRight: -20,
+    marginTop: -5,
   },
   hi: {
     textAlign: "left",
@@ -175,6 +262,13 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#000000",
   },
+  fontbiru: {
+    fontSize: 14,
+    marginLeft: 10,
+    marginTop: 10,
+    fontWeight: "bold",
+    color: "#259AD5",
+  },
   logo1: {
     resizeMode: "contain",
     height: 92,
@@ -186,6 +280,13 @@ const styles = StyleSheet.create({
     height: 20,
     marginLeft: -100,
     marginBottom: 20,
+  },
+  scaner: {
+    resizeMode: "contain",
+    width: 23,
+    marginTop: -236,
+    color: "#259AD5",
+    marginLeft: 15,
   },
   imgStyle: {
     marginTop: windowHeight / 8,
